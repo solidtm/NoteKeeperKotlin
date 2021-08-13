@@ -5,9 +5,14 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
+import com.solid.notekeeperkotlin.constants.NOTE_POSITION
+import com.solid.notekeeperkotlin.constants.POSITION_NOT_SET
+import com.solid.notekeeperkotlin.data.DataManager
 import com.solid.notekeeperkotlin.databinding.ActivityMainBinding
+import com.solid.notekeeperkotlin.model.CourseInfo
+import com.solid.notekeeperkotlin.model.NoteInfo
 
-class MainActivity : AppCompatActivity() {
+class NoteActivity : AppCompatActivity() {
 
     private var notePosition = POSITION_NOT_SET
 
@@ -24,7 +29,7 @@ class MainActivity : AppCompatActivity() {
                 DataManager.courses.values.toList())
         adapterCourses.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)   //using the spinner dropdown item layout to handle data on click of dropdown arrow on spinner
 
-        binding.mainContainer.spinnerCourses.adapter = adapterCourses; //connecting the adapter to the spinner in our UI
+        binding.mainContainer.spinnerCourses.adapter = adapterCourses //connecting the adapter to the spinner in our UI
 
 //        Get the intent that started this activity and its extra using notePosition
 //        If position is set, we know its a click on listView, else if position is not set, we know its from fab
@@ -109,6 +114,7 @@ class MainActivity : AppCompatActivity() {
         note.course = binding.mainContainer.spinnerCourses.selectedItem as CourseInfo
     }
 
+//    ensuring the notePosition instance saves our state correctly
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         outState.putInt(NOTE_POSITION, notePosition)

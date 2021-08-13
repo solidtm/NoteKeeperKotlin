@@ -3,12 +3,22 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Lordsolid/AndroidStudioProjects/NoteKeeperKotlin/app/src/main/res/drawable-v24/ic_assignment_black_24dp.xml" value="0.13333333333333333" />
+        <entry key="..\:/Users/Lordsolid/AndroidStudioProjects/NoteKeeperKotlin/app/src/main/res/drawable-v24/side_nav_bar.xml" value="0.2484375" />
+        <entry key="..\:/Users/Lordsolid/AndroidStudioProjects/NoteKeeperKotlin/app/src/main/res/layout/activity_items.xml" value="0.1" />
         <entry key="..\:/Users/Lordsolid/AndroidStudioProjects/NoteKeeperKotlin/app/src/main/res/layout/activity_main.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/Lordsolid/AndroidStudioProjects/NoteKeeperKotlin/app/src/main/res/layout/activity_note_list.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Lordsolid/AndroidStudioProjects/NoteKeeperKotlin/app/src/main/res/layout/app_bar_items.xml" value="0.2" />
+        <entry key="..\:/Users/Lordsolid/AndroidStudioProjects/NoteKeeperKotlin/app/src/main/res/layout/content_items.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/Lordsolid/AndroidStudioProjects/NoteKeeperKotlin/app/src/main/res/layout/content_main.xml" value="0.2" />
-        <entry key="..\:/Users/Lordsolid/AndroidStudioProjects/NoteKeeperKotlin/app/src/main/res/layout/content_note_list.xml" value="0.2" />
+        <entry key="..\:/Users/Lordsolid/AndroidStudioProjects/NoteKeeperKotlin/app/src/main/res/layout/content_note_list.xml" value="0.264" />
         <entry key="..\:/Users/Lordsolid/AndroidStudioProjects/NoteKeeperKotlin/app/src/main/res/layout/fragment_first.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/Lordsolid/AndroidStudioProjects/NoteKeeperKotlin/app/src/main/res/layout/fragment_second.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Lordsolid/AndroidStudioProjects/NoteKeeperKotlin/app/src/main/res/layout/item_course_list.xml" value="0.1" />
+        <entry key="..\:/Users/Lordsolid/AndroidStudioProjects/NoteKeeperKotlin/app/src/main/res/layout/item_note_list.xml" value="0.2" />
+        <entry key="..\:/Users/Lordsolid/AndroidStudioProjects/NoteKeeperKotlin/app/src/main/res/layout/nav_header_items.xml" value="0.264" />
+        <entry key="..\:/Users/Lordsolid/AndroidStudioProjects/NoteKeeperKotlin/app/src/main/res/menu/activity_items_drawer.xml" value="0.264" />
+        <entry key="..\:/Users/Lordsolid/AndroidStudioProjects/NoteKeeperKotlin/app/src/main/res/menu/items.xml" value="0.1" />
         <entry key="..\:/Users/Lordsolid/AndroidStudioProjects/NoteKeeperKotlin/app/src/main/res/menu/menu_main.xml" value="0.264" />
       </map>
     </option>

@@ -1,4 +1,4 @@
-package com.solid.notekeeperkotlin
+package com.solid.notekeeperkotlin.model
 
 data class CourseInfo(val courseCode: String, val title: String) {
     override fun toString(): String {
