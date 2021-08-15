@@ -5,86 +5,56 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
+import com.google.android.material.snackbar.Snackbar
+import com.google.android.material.navigation.NavigationView
+import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.navigateUp
+import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.GravityCompat
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.navigation.NavigationView
-import com.google.android.material.snackbar.Snackbar
-import com.solid.notekeeperkotlin.adapter.CourseRecyclerAdapter
 import com.solid.notekeeperkotlin.adapter.NoteRecyclerAdapter
 import com.solid.notekeeperkotlin.data.DataManager
 import com.solid.notekeeperkotlin.databinding.ActivityItemsBinding
 
 class ItemsActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
+    private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityItemsBinding
-
-    private val noteLayoutManager by lazy{
-        LinearLayoutManager(this)
-    }
-
-    private val noteRecyclerAdapter by lazy {
-        NoteRecyclerAdapter(this, DataManager.notes)
-    }
-
-    private val courseLayoutManager by lazy{
-        GridLayoutManager(this, 2)
-    }
-
-    private val courseRecyclerAdapter by lazy {
-        CourseRecyclerAdapter(this, DataManager.courses.values.toList())
-    }
+    private val listItems: RecyclerView = binding.appBarItems.appBarContents.listItems
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = ActivityItemsBinding.inflate(layoutInflater)
-        val listItems = binding.appBarContainer.appBarItemsContainer.listItems
-        val toolbar = binding.appBarContainer.toolbar
+        setContentView(binding.root)
 
-        setContentView(R.layout.activity_items)
-        setSupportActionBar(toolbar)
+        setSupportActionBar(binding.appBarItems.toolbar)
+        val drawerLayout: DrawerLayout = binding.drawerLayout
+        val navView: NavigationView = binding.navView
 
-        binding.appBarContainer.fab.setOnClickListener {
+        binding.appBarItems.fab.setOnClickListener { view ->
             startActivity(Intent(this, NoteActivity::class.java))
         }
 
-        displayNotes(listItems)
+        listItems.layoutManager = LinearLayoutManager(this)
+        listItems.adapter = NoteRecyclerAdapter(this, DataManager.notes)
 
-        val toggle = ActionBarDrawerToggle(
-                this, binding.drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
-        binding.drawerLayout.addDrawerListener(toggle)
-        toggle.syncState()
 
-        binding.navView.setNavigationItemSelectedListener(this)
-    }
+        val toggle = ActionBarDrawerToggle(this, drawerLayout, binding.appBarItems.toolbar, R.string.navigation_drawer_open,
+            R.string.navigation_drawer_close)
+        drawerLayout.addDrawerListener(toggle)
 
-    private fun displayNotes(listItems: RecyclerView) {
-        listItems.layoutManager = noteLayoutManager
-        listItems.adapter = noteRecyclerAdapter
+        navView.setNavigationItemSelectedListener(this)
 
-        binding.navView.menu.findItem(R.id.nav_notes).isChecked = true
-    }
-
-    private fun displayCourses(listItems: RecyclerView) {
-        listItems.layoutManager = courseLayoutManager
-        listItems.adapter = courseRecyclerAdapter
-
-        binding.navView.menu.findItem(R.id.nav_notes).isChecked = true
     }
 
     override fun onResume() {
         super.onResume()
-        binding.appBarContainer.appBarItemsContainer.listItems.adapter?.notifyDataSetChanged()
-    }
-
-    override fun onBackPressed() {
-        if (binding.drawerLayout.isDrawerOpen(GravityCompat.START)) {
-            binding.drawerLayout.closeDrawer(GravityCompat.START)
-        } else {
-            super.onBackPressed()
-        }
+        listItems.adapter?.notifyDataSetChanged()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -93,42 +63,8 @@ class ItemsActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         return true
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        return when (item.itemId) {
-            R.id.action_settings -> true
-            else -> super.onOptionsItemSelected(item)
-        }
-    }
-
-
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        // Handle navigation view item clicks here.
-        when (item.itemId) {
-            R.id.nav_notes -> {
-                // Handle the notes selection action
-                displayNotes(binding.appBarContainer.appBarItemsContainer.listItems)
-            }
-            R.id.nav_courses -> {
-                displayCourses(binding.appBarContainer.appBarItemsContainer.listItems)
-            }
-
-            R.id.nav_share -> {
-                handleSelection("Share")
-            }
-            R.id.nav_send -> {
-                handleSelection("Send")
-            }
-        }
-
-        binding.drawerLayout.closeDrawer(GravityCompat.START)
-        return true
+        TODO("Not yet implemented")
     }
 
-    private fun handleSelection(message: String) {
-        Snackbar.make(binding.appBarContainer.appBarItemsContainer.listItems, message,
-                        Snackbar.LENGTH_LONG).show()
-    }
 }

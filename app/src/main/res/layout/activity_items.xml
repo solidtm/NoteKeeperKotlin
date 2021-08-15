@@ -8,9 +8,8 @@
     android:fitsSystemWindows="true"
     tools:openDrawer="start">
 
-
     <include
-        android:id="@+id/appBarContainer"
+        android:id="@+id/app_bar_items"
         layout="@layout/app_bar_items"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
@@ -23,5 +22,4 @@
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_items"
         app:menu="@menu/activity_items_drawer" />
-
 </androidx.drawerlayout.widget.DrawerLayout>
