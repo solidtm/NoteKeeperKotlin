@@ -1,10 +1,11 @@
-package com.solid.notekeeperkotlin
+package com.solid.notekeeperkotlin.activity
 
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
+import com.solid.notekeeperkotlin.R
 import com.solid.notekeeperkotlin.constants.NOTE_POSITION
 import com.solid.notekeeperkotlin.constants.POSITION_NOT_SET
 import com.solid.notekeeperkotlin.data.DataManager
