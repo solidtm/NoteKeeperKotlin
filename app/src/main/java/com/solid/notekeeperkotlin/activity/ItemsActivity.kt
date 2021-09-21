@@ -109,10 +109,10 @@ class ItemsActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
                 displayCourses()
             }
             R.id.nav_share -> {
-                handleSelection("Don't you think you've shared enough")
+                handleSelection(R.string.nav_share_message)
             }
             R.id.nav_send -> {
-                handleSelection("Send")
+                handleSelection(R.string.nav_send_message)
             }
         }
 
@@ -120,7 +120,7 @@ class ItemsActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         return true
     }
 
-    private fun handleSelection(message: String) {
-        Snackbar.make(binding.appBarItems.appBarContents.listItems, message, Snackbar.LENGTH_LONG).show()
+    private fun handleSelection(stringId: Int) {
+        Snackbar.make(binding.appBarItems.appBarContents.listItems, stringId, Snackbar.LENGTH_LONG).show()
     }
 }

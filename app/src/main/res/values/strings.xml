@@ -1,21 +1,24 @@
 <resources>
-    <string name="app_name">Edit Note</string>
-    <string name="action_settings">Settings</string>
+    <string name="app_name">NoteKeeper</string>
+    <string name="action_settings" translatable="false">Settings</string>
 
     <string name="note_title">Note title</string>
     <string name="note_text">Note text</string>
-    <string name="title_activity_note_list">NoteKeeper</string>
-    <string name="menu_item_next">Next</string>
+    <string name="title_activity_note_list" translatable="false">NoteKeeper</string>
+    <string name="menu_item_next" translatable="false">Next</string>
 
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
-    <string name="nav_header_desc">Navigation header</string>
-    <string name="title_activity_items">Note Keeper</string>
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
+    <string name="nav_header_title" translatable="false">Android Studio</string>
+    <string name="nav_header_subtitle" translatable="false">android.studio@android.com</string>
+    <string name="nav_header_desc" translatable="false">Navigation header</string>
+    <string name="title_activity_items" translatable="false">NoteKeeper</string>
 
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
-    <string name="itemCourseTextview">TextView</string>
+    <string name="menu_home" translatable="false">Home</string>
+    <string name="menu_gallery" translatable="false">Gallery</string>
+    <string name="menu_slideshow" translatable="false">Slideshow</string>
+    <string name="itemCourseTextview" translatable="false">TextView</string>
+    <string name="note_activity_label">Edit Note</string>
+    <string name="nav_share_message" translatable="false">Don\'t you think you\'ve shared enough</string>
+    <string name="nav_send_message" translatable="false">Send</string>
 </resources>

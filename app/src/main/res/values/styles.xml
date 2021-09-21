@@ -9,5 +9,14 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="NoteTitle" parent="@android:style/TextAppearance.Material.Medium">
+        <item name="android:textColor">@color/pluralsight_plum</item>
+    </style>
+
+    <style name="AddFAB" parent="@style/Widget.Design.FloatingActionButton">
+        <item name="android:layout_margin">@dimen/fab_margin</item>
+        <item name="srcCompat">@drawable/ic_add_white_24</item>
+        <item name="android:backgroundTint">@color/pluralsight_plum</item>
+    </style>
 
 </resources>
